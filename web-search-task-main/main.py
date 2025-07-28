@@ -44,9 +44,10 @@ class WebCrawler:
             print("No results found.")
 
 def main():
+
     crawler = WebCrawler()
     start_url = "https://example.com"
-    crawler.craw(start_url)
+    crawler.crawl(start_url)
 
     keyword = "test"
     results = crawler.search(keyword)
