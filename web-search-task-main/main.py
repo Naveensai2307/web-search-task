@@ -1,3 +1,7 @@
+import requests
+from bs4 import BeautifulSoup
+from collections import defaultdict
+from urllib.parse import urljoin, urlparse
 
 class WebCrawler:
     def __init__(self):
@@ -51,8 +55,6 @@ def main():
 
 import unittest
 from unittest.mock import patch, MagicMock
-import requests
-from bs4 import BeautifulSoup
 from collections import defaultdict
 from urllib.parse import urljoin, urlparse
 
