@@ -9,9 +9,10 @@ class WebCrawler:
         self.visited = set()
 
     def crawl(self, url, base_url=None):
-        if url in self.visited:
+        abs_url = urljoin(base_url or url, url)
+        if abs_url in self.visited:
             return
-        self.visited.add(url)
+        self.visited.add(abs_url)
 
         try:
             response = requests.get(url)
@@ -91,7 +92,7 @@ class WebCrawlerTests(unittest.TestCase):
     def test_search(self):
         crawler = WebCrawler()
         crawler.index["page1"] = "This has the keyword"
-        crawler.index["page2"] = "No keyword here"
+        crawler.index["page2"] = "No match here"
 
         results = crawler.search("keyword")
         self.assertEqual(results, ["page1"])
