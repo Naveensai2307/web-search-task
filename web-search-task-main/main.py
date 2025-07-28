@@ -107,6 +107,5 @@ class WebCrawlerTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()  # Run unit tests
-    main()  # Run your main application logic 
 
 
